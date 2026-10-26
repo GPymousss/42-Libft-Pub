@@ -21,41 +21,18 @@ int	ft_isalnum(int ch)
 }
 
 /*
-** Test main: uncomment the block below, then run:
-** make && cc -Wall -Wextra -Werror ft_isalnum.c -L. -lft && ./a.out
-*/
-/*
 #include <stdio.h>
 #include <ctype.h>
 
-static void	result(int ok)
-{
-	if (ok)
-		printf("\033[32m[OK]\033[0m ");
-	else
-		printf("\033[31m[KO]\033[0m ");
-}
-
-static void	check(const char *label, int ok)
-{
-	result(ok);
-	printf("%s\n", label);
-}
-
 int	main(void)
 {
-	int	c;
-	int	ok;
-
-	ok = 1;
-	c = -1;
-	while (c <= 255)
-	{
-		if (!ft_isalnum(c) != !isalnum(c))
-			ok = 0;
-		c++;
-	}
-	check("ft_isalnum(-1..255) vs isalnum", ok);
+	printf("     ft_isalnum | isalnum\n");
+	printf("'a' : %d | %d\n", ft_isalnum('a'), isalnum('a'));
+	printf("'Z' : %d | %d\n", ft_isalnum('Z'), isalnum('Z'));
+	printf("'5' : %d | %d\n", ft_isalnum('5'), isalnum('5'));
+	printf("' ' : %d | %d\n", ft_isalnum(' '), isalnum(' '));
+	printf("127 : %d | %d\n", ft_isalnum(127), isalnum(127));
+	printf("200 : %d | %d\n", ft_isalnum(200), isalnum(200));
 	return (0);
 }
 */

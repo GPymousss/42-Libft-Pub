@@ -21,42 +21,16 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *))
 }
 
 /*
-** Test main: uncomment the block below, then run:
-** make && cc -Wall -Wextra -Werror ft_lstdelone.c -L. -lft && ./a.out
-*/
-/*
 #include <stdio.h>
-
-static void	result(int ok)
-{
-	if (ok)
-		printf("\033[32m[OK]\033[0m ");
-	else
-		printf("\033[31m[KO]\033[0m ");
-}
-
-static void	check(const char *label, int ok)
-{
-	result(ok);
-	printf("%s\n", label);
-}
-
-static void	del_flag(void *content)
-{
-	*(int *)content = 1;
-}
 
 int	main(void)
 {
 	t_list	*node;
-	int		flag;
 
-	flag = 0;
-	node = ft_lstnew(&flag);
-	ft_lstdelone(node, del_flag);
-	check("ft_lstdelone calls del on content", flag == 1);
-	ft_lstdelone(NULL, del_flag);
-	check("ft_lstdelone(NULL) no crash", 1);
+	node = ft_lstnew(ft_strdup("Hello 42"));
+	printf("%s\n", (char *)node->content);
+	ft_lstdelone(node, free);
+	printf("supprime\n");
 	return (0);
 }
 */

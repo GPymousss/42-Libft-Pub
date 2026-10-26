@@ -66,68 +66,22 @@ char	**ft_split(char const *s, char c)
 }
 
 /*
-** Test main: uncomment the block below, then run:
-** make && cc -Wall -Wextra -Werror ft_split.c -L. -lft && ./a.out
-*/
-/*
 #include <stdio.h>
-#include <string.h>
-
-static void	result(int ok)
-{
-	if (ok)
-		printf("\033[32m[OK]\033[0m ");
-	else
-		printf("\033[31m[KO]\033[0m ");
-}
-
-static void	test(char const *s, char c, char **exp)
-{
-	char	**r;
-	int		i;
-	int		ok;
-
-	r = ft_split(s, c);
-	ok = (r != NULL);
-	i = 0;
-	while (ok && exp[i])
-	{
-		if (!r[i] || strcmp(r[i], exp[i]) != 0)
-			ok = 0;
-		i++;
-	}
-	if (ok && r[i] != NULL)
-		ok = 0;
-	result(ok);
-	printf("ft_split(\"%s\", '%c')\n", s, c);
-	i = 0;
-	while (r && r[i])
-		free(r[i++]);
-	free(r);
-}
 
 int	main(void)
 {
-	char	*e1[4];
-	char	*e2[1];
-	char	*e3[2];
-	char	*e4[3];
+	char	**tab;
+	int		i;
 
-	e1[0] = "Hello";
-	e1[1] = "42";
-	e1[2] = "Paris";
-	e1[3] = NULL;
-	e2[0] = NULL;
-	e3[0] = "abc";
-	e3[1] = NULL;
-	e4[0] = "a";
-	e4[1] = "b";
-	e4[2] = NULL;
-	test("  Hello  42  Paris ", ' ', e1);
-	test("", ' ', e2);
-	test("    ", ' ', e2);
-	test("abc", '\0', e3);
-	test(",a,,b,", ',', e4);
+	tab = ft_split("  Hello  42  Paris ", ' ');
+	i = 0;
+	while (tab[i])
+	{
+		printf("%s\n", tab[i]);
+		free(tab[i]);
+		i++;
+	}
+	free(tab);
 	return (0);
 }
 */

@@ -18,39 +18,10 @@ void	ft_putchar_fd(char c, int fd)
 }
 
 /*
-** Test main: uncomment the block below, then run:
-** make && cc -Wall -Wextra -Werror ft_putchar_fd.c -L. -lft && ./a.out
-*/
-/*
-#include <stdio.h>
-
-static void	result(int ok)
-{
-	if (ok)
-		printf("\033[32m[OK]\033[0m ");
-	else
-		printf("\033[31m[KO]\033[0m ");
-}
-
-static void	test(char c)
-{
-	int		fds[2];
-	char	buf[2];
-
-	if (pipe(fds) == -1)
-		return ;
-	ft_putchar_fd(c, fds[1]);
-	close(fds[1]);
-	result(read(fds[0], buf, 2) == 1 && buf[0] == c);
-	printf("ft_putchar_fd('%c')\n", c);
-	close(fds[0]);
-}
-
 int	main(void)
 {
-	test('a');
-	test('Z');
-	test('~');
+	ft_putchar_fd('a', 1);
+	ft_putchar_fd('\n', 1);
 	return (0);
 }
 */

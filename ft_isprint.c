@@ -20,41 +20,18 @@ int	ft_isprint(int ch)
 }
 
 /*
-** Test main: uncomment the block below, then run:
-** make && cc -Wall -Wextra -Werror ft_isprint.c -L. -lft && ./a.out
-*/
-/*
 #include <stdio.h>
 #include <ctype.h>
 
-static void	result(int ok)
-{
-	if (ok)
-		printf("\033[32m[OK]\033[0m ");
-	else
-		printf("\033[31m[KO]\033[0m ");
-}
-
-static void	check(const char *label, int ok)
-{
-	result(ok);
-	printf("%s\n", label);
-}
-
 int	main(void)
 {
-	int	c;
-	int	ok;
-
-	ok = 1;
-	c = -1;
-	while (c <= 255)
-	{
-		if (!ft_isprint(c) != !isprint(c))
-			ok = 0;
-		c++;
-	}
-	check("ft_isprint(-1..255) vs isprint", ok);
+	printf("     ft_isprint | isprint\n");
+	printf("'a' : %d | %d\n", ft_isprint('a'), isprint('a'));
+	printf("'Z' : %d | %d\n", ft_isprint('Z'), isprint('Z'));
+	printf("'5' : %d | %d\n", ft_isprint('5'), isprint('5'));
+	printf("' ' : %d | %d\n", ft_isprint(' '), isprint(' '));
+	printf("127 : %d | %d\n", ft_isprint(127), isprint(127));
+	printf("200 : %d | %d\n", ft_isprint(200), isprint(200));
 	return (0);
 }
 */

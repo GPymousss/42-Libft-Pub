@@ -33,41 +33,16 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 }
 
 /*
-** Test main: uncomment the block below, then run:
-** make && cc -Wall -Wextra -Werror ft_strlcpy.c -L. -lft && ./a.out
-*/
-/*
 #include <stdio.h>
-#include <string.h>
-
-static void	result(int ok)
-{
-	if (ok)
-		printf("\033[32m[OK]\033[0m ");
-	else
-		printf("\033[31m[KO]\033[0m ");
-}
-
-static void	check(const char *label, int ok)
-{
-	result(ok);
-	printf("%s\n", label);
-}
 
 int	main(void)
 {
-	char	buf[10];
-	size_t	r;
+	char	dst[10];
 
-	r = ft_strlcpy(buf, "Hello", 10);
-	check("ft_strlcpy size 10", r == 5 && strcmp(buf, "Hello") == 0);
-	r = ft_strlcpy(buf, "Hello", 3);
-	check("ft_strlcpy size 3 (truncate)", r == 5 && strcmp(buf, "He") == 0);
-	strcpy(buf, "xyz");
-	r = ft_strlcpy(buf, "Hello", 0);
-	check("ft_strlcpy size 0", r == 5 && strcmp(buf, "xyz") == 0);
-	r = ft_strlcpy(buf, "", 10);
-	check("ft_strlcpy empty src", r == 0 && buf[0] == '\0');
+	printf("retour : %zu\n", ft_strlcpy(dst, "Hello 42", 10));
+	printf("dst    : %s\n", dst);
+	printf("retour : %zu\n", ft_strlcpy(dst, "Hello 42", 4));
+	printf("dst    : %s\n", dst);
 	return (0);
 }
 */

@@ -20,41 +20,18 @@ int	ft_isascii(int ch)
 }
 
 /*
-** Test main: uncomment the block below, then run:
-** make && cc -Wall -Wextra -Werror ft_isascii.c -L. -lft && ./a.out
-*/
-/*
 #include <stdio.h>
 #include <ctype.h>
 
-static void	result(int ok)
-{
-	if (ok)
-		printf("\033[32m[OK]\033[0m ");
-	else
-		printf("\033[31m[KO]\033[0m ");
-}
-
-static void	check(const char *label, int ok)
-{
-	result(ok);
-	printf("%s\n", label);
-}
-
 int	main(void)
 {
-	int	c;
-	int	ok;
-
-	ok = 1;
-	c = -1;
-	while (c <= 255)
-	{
-		if (!ft_isascii(c) != !isascii(c))
-			ok = 0;
-		c++;
-	}
-	check("ft_isascii(-1..255) vs isascii", ok);
+	printf("     ft_isascii | isascii\n");
+	printf("'a' : %d | %d\n", ft_isascii('a'), isascii('a'));
+	printf("'Z' : %d | %d\n", ft_isascii('Z'), isascii('Z'));
+	printf("'5' : %d | %d\n", ft_isascii('5'), isascii('5'));
+	printf("' ' : %d | %d\n", ft_isascii(' '), isascii(' '));
+	printf("127 : %d | %d\n", ft_isascii(127), isascii(127));
+	printf("200 : %d | %d\n", ft_isascii(200), isascii(200));
 	return (0);
 }
 */

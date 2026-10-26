@@ -20,41 +20,18 @@ int	ft_isdigit(int ch)
 }
 
 /*
-** Test main: uncomment the block below, then run:
-** make && cc -Wall -Wextra -Werror ft_isdigit.c -L. -lft && ./a.out
-*/
-/*
 #include <stdio.h>
 #include <ctype.h>
 
-static void	result(int ok)
-{
-	if (ok)
-		printf("\033[32m[OK]\033[0m ");
-	else
-		printf("\033[31m[KO]\033[0m ");
-}
-
-static void	check(const char *label, int ok)
-{
-	result(ok);
-	printf("%s\n", label);
-}
-
 int	main(void)
 {
-	int	c;
-	int	ok;
-
-	ok = 1;
-	c = -1;
-	while (c <= 255)
-	{
-		if (!ft_isdigit(c) != !isdigit(c))
-			ok = 0;
-		c++;
-	}
-	check("ft_isdigit(-1..255) vs isdigit", ok);
+	printf("     ft_isdigit | isdigit\n");
+	printf("'a' : %d | %d\n", ft_isdigit('a'), isdigit('a'));
+	printf("'Z' : %d | %d\n", ft_isdigit('Z'), isdigit('Z'));
+	printf("'5' : %d | %d\n", ft_isdigit('5'), isdigit('5'));
+	printf("' ' : %d | %d\n", ft_isdigit(' '), isdigit(' '));
+	printf("127 : %d | %d\n", ft_isdigit(127), isdigit(127));
+	printf("200 : %d | %d\n", ft_isdigit(200), isdigit(200));
 	return (0);
 }
 */

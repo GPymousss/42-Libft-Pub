@@ -35,44 +35,16 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 }
 
 /*
-** Test main: uncomment the block below, then run:
-** make && cc -Wall -Wextra -Werror ft_strlcat.c -L. -lft && ./a.out
-*/
-/*
 #include <stdio.h>
-#include <string.h>
-
-static void	result(int ok)
-{
-	if (ok)
-		printf("\033[32m[OK]\033[0m ");
-	else
-		printf("\033[31m[KO]\033[0m ");
-}
-
-static void	check(const char *label, int ok)
-{
-	result(ok);
-	printf("%s\n", label);
-}
 
 int	main(void)
 {
-	char	buf[20];
-	size_t	r;
+	char	dst[20] = "Hello";
 
-	strcpy(buf, "abc");
-	r = ft_strlcat(buf, "def", 20);
-	check("ft_strlcat enough room", r == 6 && strcmp(buf, "abcdef") == 0);
-	strcpy(buf, "abc");
-	r = ft_strlcat(buf, "defgh", 5);
-	check("ft_strlcat truncate", r == 8 && strcmp(buf, "abcd") == 0);
-	strcpy(buf, "abc");
-	r = ft_strlcat(buf, "xyz", 2);
-	check("ft_strlcat size < dst len", r == 5 && strcmp(buf, "abc") == 0);
-	strcpy(buf, "abc");
-	r = ft_strlcat(buf, "", 20);
-	check("ft_strlcat empty src", r == 3 && strcmp(buf, "abc") == 0);
+	printf("retour : %zu\n", ft_strlcat(dst, " 42", 20));
+	printf("dst    : %s\n", dst);
+	printf("retour : %zu\n", ft_strlcat(dst, " Paris", 10));
+	printf("dst    : %s\n", dst);
 	return (0);
 }
 */

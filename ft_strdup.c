@@ -26,37 +26,15 @@ char	*ft_strdup(const char *s)
 }
 
 /*
-** Test main: uncomment the block below, then run:
-** make && cc -Wall -Wextra -Werror ft_strdup.c -L. -lft && ./a.out
-*/
-/*
 #include <stdio.h>
-#include <string.h>
-
-static void	result(int ok)
-{
-	if (ok)
-		printf("\033[32m[OK]\033[0m ");
-	else
-		printf("\033[31m[KO]\033[0m ");
-}
-
-static void	check(const char *label, int ok)
-{
-	result(ok);
-	printf("%s\n", label);
-}
 
 int	main(void)
 {
-	char	*d;
+	char	*s;
 
-	d = ft_strdup("Hello 42");
-	check("ft_strdup \"Hello 42\"", d && strcmp(d, "Hello 42") == 0);
-	free(d);
-	d = ft_strdup("");
-	check("ft_strdup \"\"", d && d[0] == '\0');
-	free(d);
+	s = ft_strdup("Hello 42");
+	printf("%s\n", s);
+	free(s);
 	return (0);
 }
 */

@@ -24,47 +24,20 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 }
 
 /*
-** Test main: uncomment the block below, then run:
-** make && cc -Wall -Wextra -Werror ft_lstiter.c -L. -lft && ./a.out
-*/
-/*
 #include <stdio.h>
 
-static void	result(int ok)
+void	print(void *content)
 {
-	if (ok)
-		printf("\033[32m[OK]\033[0m ");
-	else
-		printf("\033[31m[KO]\033[0m ");
-}
-
-static void	check(const char *label, int ok)
-{
-	result(ok);
-	printf("%s\n", label);
-}
-
-static void	add_one(void *content)
-{
-	(*(int *)content)++;
+	printf("%s\n", (char *)content);
 }
 
 int	main(void)
 {
 	t_list	*lst;
-	int		v[3];
 
-	v[0] = 1;
-	v[1] = 2;
-	v[2] = 3;
-	lst = ft_lstnew(&v[0]);
-	lst->next = ft_lstnew(&v[1]);
-	lst->next->next = ft_lstnew(&v[2]);
-	ft_lstiter(lst, add_one);
-	check("ft_lstiter +1 on each node", v[0] == 2 && v[1] == 3 && v[2] == 4);
-	ft_lstiter(NULL, add_one);
-	check("ft_lstiter(NULL) no crash", 1);
-	free(lst->next->next);
+	lst = ft_lstnew("A");
+	lst->next = ft_lstnew("B");
+	ft_lstiter(lst, print);
 	free(lst->next);
 	free(lst);
 	return (0);

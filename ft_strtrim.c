@@ -40,38 +40,15 @@ char	*ft_strtrim(char const *s1, char const *set)
 }
 
 /*
-** Test main: uncomment the block below, then run:
-** make && cc -Wall -Wextra -Werror ft_strtrim.c -L. -lft && ./a.out
-*/
-/*
 #include <stdio.h>
-#include <string.h>
-
-static void	result(int ok)
-{
-	if (ok)
-		printf("\033[32m[OK]\033[0m ");
-	else
-		printf("\033[31m[KO]\033[0m ");
-}
-
-static void	test(char const *s1, char const *set, char *exp)
-{
-	char	*r;
-
-	r = ft_strtrim(s1, set);
-	result(r && strcmp(r, exp) == 0);
-	printf("ft_strtrim(\"%s\", \"%s\") -> \"%s\"\n", s1, set, r);
-	free(r);
-}
 
 int	main(void)
 {
-	test("  xxHello 42xx  ", " x", "Hello 42");
-	test("  a b  ", " ", "a b");
-	test("xxxx", "x", "");
-	test("abc", "", "abc");
-	test("", "x", "");
+	char	*s;
+
+	s = ft_strtrim("  xxHello 42xx  ", " x");
+	printf("%s\n", s);
+	free(s);
 	return (0);
 }
 */

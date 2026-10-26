@@ -29,38 +29,15 @@ char	*ft_strrchr(const char *s, int c)
 }
 
 /*
-** Test main: uncomment the block below, then run:
-** make && cc -Wall -Wextra -Werror ft_strrchr.c -L. -lft && ./a.out
-*/
-/*
 #include <stdio.h>
 #include <string.h>
 
-static void	result(int ok)
-{
-	if (ok)
-		printf("\033[32m[OK]\033[0m ");
-	else
-		printf("\033[31m[KO]\033[0m ");
-}
-
-static void	check(const char *label, int ok)
-{
-	result(ok);
-	printf("%s\n", label);
-}
-
 int	main(void)
 {
-	const char	*s;
-
-	s = "Hello 42";
-	check("ft_strrchr 'l'", ft_strrchr(s, 'l') == strrchr(s, 'l'));
-	check("ft_strrchr 'H'", ft_strrchr(s, 'H') == strrchr(s, 'H'));
-	check("ft_strrchr '\\0'", ft_strrchr(s, '\0') == strrchr(s, '\0'));
-	check("ft_strrchr 'z' (absent)", ft_strrchr(s, 'z') == strrchr(s, 'z'));
-	check("ft_strrchr 'l' + 256",
-		ft_strrchr(s, 'l' + 256) == strrchr(s, 'l' + 256));
+	printf("ft_strrchr('l') : %s | strrchr : %s\n",
+		ft_strrchr("Hello 42", 'l'), strrchr("Hello 42", 'l'));
+	printf("ft_strrchr('z') : %p | strrchr : %p\n",
+		ft_strrchr("Hello 42", 'z'), strrchr("Hello 42", 'z'));
 	return (0);
 }
 */

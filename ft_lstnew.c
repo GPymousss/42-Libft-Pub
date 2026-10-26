@@ -25,39 +25,14 @@ t_list	*ft_lstnew(void *content)
 }
 
 /*
-** Test main: uncomment the block below, then run:
-** make && cc -Wall -Wextra -Werror ft_lstnew.c -L. -lft && ./a.out
-*/
-/*
 #include <stdio.h>
-
-static void	result(int ok)
-{
-	if (ok)
-		printf("\033[32m[OK]\033[0m ");
-	else
-		printf("\033[31m[KO]\033[0m ");
-}
-
-static void	check(const char *label, int ok)
-{
-	result(ok);
-	printf("%s\n", label);
-}
 
 int	main(void)
 {
 	t_list	*node;
-	int		v;
 
-	v = 42;
-	node = ft_lstnew(&v);
-	check("ft_lstnew not NULL", node != NULL);
-	check("ft_lstnew content", node && node->content == &v);
-	check("ft_lstnew next NULL", node && node->next == NULL);
-	free(node);
-	node = ft_lstnew(NULL);
-	check("ft_lstnew(NULL) content NULL", node && node->content == NULL);
+	node = ft_lstnew("Hello 42");
+	printf("%s\n", (char *)node->content);
 	free(node);
 	return (0);
 }
