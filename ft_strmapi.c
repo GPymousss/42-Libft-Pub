@@ -33,3 +33,47 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	copy[i] = '\0';
 	return (copy);
 }
+
+/*
+** Test main: uncomment the block below, then run:
+** make && cc -Wall -Wextra -Werror ft_strmapi.c -L. -lft && ./a.out
+*/
+/*
+#include <stdio.h>
+#include <string.h>
+
+static void	result(int ok)
+{
+	if (ok)
+		printf("\033[32m[OK]\033[0m ");
+	else
+		printf("\033[31m[KO]\033[0m ");
+}
+
+static void	check(const char *label, int ok)
+{
+	result(ok);
+	printf("%s\n", label);
+}
+
+static char	upper_even(unsigned int i, char c)
+{
+	if (i % 2 == 0 && c >= 'a' && c <= 'z')
+		return (c - 32);
+	return (c);
+}
+
+int	main(void)
+{
+	char	*r;
+
+	r = ft_strmapi("hello", upper_even);
+	check("ft_strmapi(\"hello\") -> \"HeLlO\"", r && strcmp(r, "HeLlO") == 0);
+	free(r);
+	r = ft_strmapi("", upper_even);
+	check("ft_strmapi(\"\") -> \"\"", r && r[0] == '\0');
+	free(r);
+	check("ft_strmapi(NULL, f) == NULL", ft_strmapi(NULL, upper_even) == NULL);
+	return (0);
+}
+*/

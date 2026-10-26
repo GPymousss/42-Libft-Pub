@@ -36,3 +36,40 @@ int	ft_atoi(const char *nptr)
 	}
 	return (r * s);
 }
+
+/*
+** Test main: uncomment the block below, then run:
+** make && cc -Wall -Wextra -Werror ft_atoi.c -L. -lft && ./a.out
+*/
+/*
+#include <stdio.h>
+
+static void	result(int ok)
+{
+	if (ok)
+		printf("\033[32m[OK]\033[0m ");
+	else
+		printf("\033[31m[KO]\033[0m ");
+}
+
+static void	test(const char *s)
+{
+	result(ft_atoi(s) == atoi(s));
+	printf("ft_atoi(\"%s\") = %d\n", s, ft_atoi(s));
+}
+
+int	main(void)
+{
+	test("42");
+	test("   -42");
+	test("\t\n+17abc");
+	test(" \v\f\r 99");
+	test("--5");
+	test("+-5");
+	test("0");
+	test("");
+	test("2147483647");
+	test("-2147483648");
+	return (0);
+}
+*/

@@ -60,3 +60,47 @@ char	*ft_itoa(int n)
 	ft_number_itoa(str, n);
 	return (str);
 }
+
+/*
+** Test main: uncomment the block below, then run:
+** make && cc -Wall -Wextra -Werror ft_itoa.c -L. -lft && ./a.out
+*/
+/*
+#include <stdio.h>
+#include <string.h>
+#include <limits.h>
+
+static void	result(int ok)
+{
+	if (ok)
+		printf("\033[32m[OK]\033[0m ");
+	else
+		printf("\033[31m[KO]\033[0m ");
+}
+
+static void	test(int n)
+{
+	char	exp[20];
+	char	*r;
+
+	sprintf(exp, "%d", n);
+	r = ft_itoa(n);
+	result(r && strcmp(r, exp) == 0);
+	printf("ft_itoa(%d) -> \"%s\"\n", n, r);
+	free(r);
+}
+
+int	main(void)
+{
+	test(0);
+	test(7);
+	test(42);
+	test(-42);
+	test(-1);
+	test(10);
+	test(-100);
+	test(INT_MAX);
+	test(INT_MIN);
+	return (0);
+}
+*/
